@@ -8,7 +8,7 @@ root.config(bg="gray")
 total = 0
 recent = ['first item']
 
-def Up():
+def Up(self):
     global total
     total+=1
     Number.config(text=total)
@@ -16,7 +16,7 @@ def Up():
     recent.pop(0)
     recent.append("up")
 
-def Down():
+def Down(self):
     global total
     total-=1
     Number.config(text=total)
@@ -64,5 +64,11 @@ Number.pack(padx=15, pady=.5, side=TOP)
 buttonDown = Button(root, command=Down)
 buttonDown.config(text="Down", bd=0, bg="white", width=25)
 buttonDown.pack(padx=15, pady=20, side=TOP)
+
+root.bind('<+>',Up)
+root.bind('<Up>',Up)
+root.bind('<minus>',Down)
+root.bind('<Down>',Down)
+root.bind('<space>',doubleClick)
 
 root.mainloop()
