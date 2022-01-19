@@ -5,15 +5,15 @@ from tkinter.messagebox import askyesno
 root = Tk()
 root.configure(bg="gray")
 root.geometry("400x200")
-time=21
 challengeLabel = ""
 challenge = ""
 score=0
 keys = ["w","a","s","d","space","Button","Double-Button","Triple-Button"]
 
 def startFunc():
-    global score
+    global score,time
     score=0
+    time=21
     start.destroy()
     countdown()
     createChallenge()
